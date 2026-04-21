@@ -28,8 +28,9 @@ Después de configurar la carpeta, debemos ejecutar los siguientes comandos:
 
 ### Instalación de Drupal en el proyecto
 
-Ahora debemos volver a ejecutar el comando 
-> ddev start / ddev st
+Ahora debemos volver a ejecutar uno de los dos comando siguientes:
+> ddev start
+>  ddev st
 
 Para arrancar nuestro proyecto. Una vez arrancado, debemos pulsar sobre el enlace que nos aparece en la tabla, en la fila de web. Se nos abrirá en el navegador con la instalación de Drupal. En ella se configura el idioma, el correo, el nombre del administrador, el nombre del sitio, etc.
 
@@ -37,4 +38,17 @@ Y ya tendríamos nuestro proyecto instalado y configurado.
 
 ## Subir el poryecto a git
 
-Para comenzar, he abierto GitHub con mi cuenta y he creado un nuevo repositorio para este ejercicio 1.
+Para comenzar, he abierto GitHub con mi cuenta y he creado un nuevo repositorio para este ejercicio 1. Una vez que tengo el repositorio creado, nos volvemos a la terminal de VSCode del proyecto y realizamos los siguientes comandos:
+
+> git init
+> git add .
+> git commit -m "Start project"
+
+(O el texto que quieras ponerle al commit
+
+> git branch -M main
+> git remote add origin url
+
+Debemos de sustituir la url, por la url del repositorio de GitHub
+
+> git push -u origin main
