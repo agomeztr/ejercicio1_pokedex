@@ -48,7 +48,7 @@ Para comenzar, he abierto GitHub con mi cuenta y he creado un nuevo repositorio 
 
 > git commit -m "Start project"
 
-(O el texto que quieras ponerle al commit
+(O el texto que quieras ponerle al commit)
 
 > git branch -M main
 
@@ -57,3 +57,9 @@ Para comenzar, he abierto GitHub con mi cuenta y he creado un nuevo repositorio 
 Debemos de sustituir la url, por la url del repositorio de GitHub
 
 > git push -u origin main
+
+## Elaboración del código.
+
+Para la pokédex he buscado una plantilla de Internet. Para poder empezar a realizar mi API he utilizado este vídeo:
+
+https://www.youtube.com/watch?v=dRIZNayrcLk
