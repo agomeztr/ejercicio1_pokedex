@@ -24,19 +24,21 @@ Lo primero que nos pide es el nombre del proyecto, yo le he puesto Pokedex. Desp
 
 Después de configurar la carpeta, debemos ejecutar los siguientes comandos:
 > ddev start
+
 > ddev composer create "drupal/recommended-project"
 
 ### Instalación de Drupal en el proyecto
 
 Ahora debemos volver a ejecutar uno de los dos comando siguientes:
 > ddev start
+
 >  ddev st
 
 Para arrancar nuestro proyecto. Una vez arrancado, debemos pulsar sobre el enlace que nos aparece en la tabla, en la fila de web. Se nos abrirá en el navegador con la instalación de Drupal. En ella se configura el idioma, el correo, el nombre del administrador, el nombre del sitio, etc.
 
 Y ya tendríamos nuestro proyecto instalado y configurado.
 
-## Subir el poryecto a git
+## Subir el proyecto a git
 
 Para comenzar, he abierto GitHub con mi cuenta y he creado un nuevo repositorio para este ejercicio 1. Una vez que tengo el repositorio creado, nos volvemos a la terminal de VSCode del proyecto y realizamos los siguientes comandos:
 
