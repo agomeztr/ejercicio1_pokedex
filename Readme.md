@@ -41,12 +41,15 @@ Y ya tendríamos nuestro proyecto instalado y configurado.
 Para comenzar, he abierto GitHub con mi cuenta y he creado un nuevo repositorio para este ejercicio 1. Una vez que tengo el repositorio creado, nos volvemos a la terminal de VSCode del proyecto y realizamos los siguientes comandos:
 
 > git init
+
 > git add .
+
 > git commit -m "Start project"
 
 (O el texto que quieras ponerle al commit
 
 > git branch -M main
+
 > git remote add origin url
 
 Debemos de sustituir la url, por la url del repositorio de GitHub
