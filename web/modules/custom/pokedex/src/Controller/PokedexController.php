@@ -11,7 +11,7 @@ class PokedexController extends ControllerBase {
             <img id = "photo-pokedex" src= "/sites/default/files/2026-04/plantilla_pokedex.png">
             <img id="photo-pokemon">
             <button id"show-details">Detalles</button>
-            <h2 id="name-pokemon"><h2>
+            <h2 id="name-pokemon"></h2>
             <section id="details">
                 <h4>Detalles</h4>
                 <span>
@@ -31,8 +31,8 @@ class PokedexController extends ControllerBase {
                     <p id="weight"></p>
                 </span>
             </section>
-            <button class="previous">Previous</button>
-            <button class="next">Next</button>
+            <button id="previous" type="button">Previous</button>
+            <button id="next" type="button">Next</button>
         </div>
         ',
         '#attached' => [

@@ -14,4 +14,18 @@
 
 #photo-pokemon{
     position: absolute;
+    width: 40%;
+    top: 42%;
+    left: 0.8%;
+}
+
+#name-pokemon{
+    position: absolute;
+    font-size: 100%;
+    left: 14.3%;
+    bottom: -11.5%;
+}
+
+#copyright-inner p{
+    color: black;
 }
