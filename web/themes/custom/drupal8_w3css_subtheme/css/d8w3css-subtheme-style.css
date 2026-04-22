@@ -26,6 +26,30 @@
     bottom: -11.5%;
 }
 
+#details{
+    position: absolute;
+    left: 35%;
+    bottom: 0%;
+}
+
+span{
+    display: flex;
+    font-size: 75%;
+    height: auto;
+}
+
+span h6{
+    margin-right: 4%;
+}
+
+span p{
+    margin-top: 10.5%;
+}
+
+span ul{
+    margin-top: 0%;
+}
+
 #copyright-inner p{
     color: black;
 }

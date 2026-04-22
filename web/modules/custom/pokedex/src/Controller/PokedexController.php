@@ -13,7 +13,6 @@ class PokedexController extends ControllerBase {
             <button id"show-details">Detalles</button>
             <h2 id="name-pokemon"></h2>
             <section id="details">
-                <h4>Detalles</h4>
                 <span>
                     <h6>Nombre: </h6>
                     <p id="name"></p>

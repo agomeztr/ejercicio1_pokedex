@@ -44,10 +44,11 @@ document.addEventListener("DOMContentLoaded", () => {
         //save the details
         console.log(data);
         id.textContent = data.id;
+        //go across the data types
         data.types.forEach(type => {
+            //create a li for every types that data has
             let list = document.createElement("li");
             list.textContent = type.type.name[0].toLocaleUpperCase() + type.type.name.slice(1);;
-            list.className = "type"
             types.appendChild(list);
         });
         height.textContent = data.height
