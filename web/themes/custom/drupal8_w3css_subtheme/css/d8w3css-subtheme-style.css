@@ -1,0 +1,17 @@
+#block-drupal8-w3css-subtheme-branding img{
+    width: 30%;
+    margin-left: 6%;
+}
+
+.site-name-slogan a{
+    margin-left: -100%;
+    margin-top: 15%;
+}
+
+#photo-pokedex{
+    position: relative;
+}
+
+#photo-pokemon{
+    position: absolute;
+}
