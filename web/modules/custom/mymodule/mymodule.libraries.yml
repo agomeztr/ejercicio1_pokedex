@@ -1,4 +1,0 @@
-mymodule:
-  version: 1.x
-  js:
-    mymodule.js: {}

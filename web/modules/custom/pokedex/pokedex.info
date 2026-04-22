@@ -1,0 +1,5 @@
+name: Pokedex
+description: "Pokedex realizada a partir de api."
+type: module
+package: custom
+core_version_requirement: ^10 || ^11
