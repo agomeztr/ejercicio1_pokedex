@@ -19,6 +19,10 @@ class PokedexController extends ControllerBase {
                     <p id="name"></p>
                 </span>
                 <span>
+                    <h6>Id: </h6>
+                    <p id="id"></p>
+                </span>
+                <span>
                     <h6>Tipos: </h6>
                     <ul id="types"></ul>
                 </span>
