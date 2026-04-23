@@ -78,6 +78,33 @@ span ul{
     margin: 0px;
 }
 
+#backToList{
+    position: absolute;
+    border: none;
+    margin-left: 355px;
+    margin-top: -62px;
+    background-color: transparent;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#right, #next{
+    position: absolute;
+    margin-left: 220px;
+    margin-top: -80px;
+    opacity: 0;
+    cursor: pointer;
+}
+
+#left, #previous{
+    position: absolute;
+    margin-left: 160px;
+    margin-top: -80px;
+    opacity: 0;
+    cursor: pointer;
+}
+
 #copyright-inner p{
     color: black;
 }
