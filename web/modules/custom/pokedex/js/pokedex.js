@@ -136,9 +136,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     //function to increase the id
     next.addEventListener("click", function() {
-        if (id < listPokemons){
-            id++;
-        }
+        id++;
         //print again the pokemon with the new id
         showPokemon(id);
         console.log("Click");
@@ -146,11 +144,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     //function to decrease the id
     previous.addEventListener("click", function() {
-        if (id > 1){
-            id--;
-        } else {
-            
-        }
+        id--;
         //print again the pokemon with the new id
         showPokemon(id);
     })
