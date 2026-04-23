@@ -1,14 +1,13 @@
 document.addEventListener("DOMContentLoaded", () => {
     //create an array to save all the pokemons
     let listPokemons = [];
-    //create an index to navigate between pokemons
-    let index = 0;
     //create a variable to change the page
     let page = 1;
     //create a variable to indicate the number of pokemons to show
     const quantity = 10;
     //create a variable to save the total pages
     let totalPages = 0;
+    let id = 0;
 
     //call to the api
     fetch("https://pokeapi.co/api/v2/pokemon?limit=100000&offset=0")
@@ -51,11 +50,21 @@ document.addEventListener("DOMContentLoaded", () => {
             //add and event to pass the id to view details
             let btn = document.getElementById('btn-' + p.name);
             btn.addEventListener("click", () => {
+                //show pokemon details and photo
                 details.className = "show";
+                photo.className = "show";
+                pokemonName.className = "show";
+                next.className = "show";
+                previous.className = "show";
+                //hidde the list and pokemons title
+                tenPokemons.className = "hidden";
+                titlePokemons.className = "hidden";
+                right.className = "hidden";
+                left.className = "hidden";
                 //find the pokemon of the list that user click
                 let pokemonToShow = list.find(({name}) => name === p.name);
                 //get the id od the pokemon
-                let id = pokemonToShow.url.split("/")[6];
+                id = pokemonToShow.url.split("/")[6];
                 console.log(id);
                 showPokemon(id);
             })
@@ -63,6 +72,8 @@ document.addEventListener("DOMContentLoaded", () => {
         console.log(list);
     }
 
+    //get the tittle Pokemons
+    let titlePokemons = document.getElementById('pokemons');
     //Get the name from the main page
     let pokemonName = document.getElementById("name-pokemon");
     let name = document.getElementById("name");
@@ -88,21 +99,6 @@ document.addEventListener("DOMContentLoaded", () => {
     //get the back to list button
     let backToList = document.getElementById('backToList');
 
-    //function to increase the index
-    next.addEventListener("click", () => {
-        index++;
-        //print again the pokemon with the new id
-        showPokemon();
-        console.log("Click");
-    })
-
-    //function to decrease the index
-    previous.addEventListener("click", () => {
-        index--;
-        //print again the pokemon with the new id
-        showPokemon();
-    })
-
     //function to increse the list of ten pokemons
     right.addEventListener("click", () => {
         //to asure the number of page it's not up to maximum
@@ -123,17 +119,42 @@ document.addEventListener("DOMContentLoaded", () => {
         console.log(page);
     })
 
+    //function to hide the pokemon details and photo
     backToList.addEventListener("click", () => {
+        //hidde
         details.className = "hidden";
         photo.className = "hidden";
+        pokemonName.className = "hidden";
+        next.className = "hidden";
+        previous.className = "hidden";
+        //show
+        tenPokemons.className = "show";
+        titlePokemons.className = "show";
+        right.className = "show";
+        left.className = "show";
+    })
+
+    //function to increase the id
+    next.addEventListener("click", function() {
+        id++;
+        //print again the pokemon with the new id
+        showPokemon(id);
+        console.log("Click");
+    })
+
+    //function to decrease the id
+    previous.addEventListener("click", function() {
+        id--;
+        //print again the pokemon with the new id
+        showPokemon(id);
     })
 
     //function to show the pokemon in the pokedex
     function showPokemon(id){
-        //delete the data from ul of types
+        //delete data from types to save new data
         types.innerHTML = '';
         //get the pokemon
-        const pokemon = listPokemons[id - 1];
+        let pokemon = listPokemons[id - 1];
         //print the pokemon's name with the first letter in capital
         pokemonName.textContent = pokemon.name[0].toLocaleUpperCase() + pokemon.name.slice(1);
         name.textContent = pokemon.name[0].toLocaleUpperCase() + pokemon.name.slice(1);
@@ -158,5 +179,6 @@ document.addEventListener("DOMContentLoaded", () => {
             height.textContent = data.height
             weight.textContent = data.weight;
         })
-    }
+    }      
+
 })

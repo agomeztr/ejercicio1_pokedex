@@ -10,10 +10,10 @@ class PokedexController extends ControllerBase {
       '#markup' => '
         <div id="pokedex">
             <img id = "photo-pokedex" src= "/sites/default/files/2026-04/plantilla_pokedex.png">
-            <img id="photo-pokemon">
+            <img id="photo-pokemon" class="hidden">
             <div id="all-pokemons"></div>
             <h2 id="pokemons">Pokemons</h2>
-            <h2 id="name-pokemon"></h2>
+            <h2 id="name-pokemon" class="hidden"></h2>
             <section id="details" class="hidden">
                 <span>
                     <h6>Nombre: </h6>
@@ -38,9 +38,9 @@ class PokedexController extends ControllerBase {
             </section>
             <button id="right" type="button">Right</button>
             <button id="left" type="button">Left</button>
-            <button id="previous" type="button">Previous</button>
-            <button id="next" type="button">Next</button>
-            <button id="backToList" type="button">Back</button>
+            <button id="previous" type="button" class="hidden">Previous</button>
+            <button id="next" type="button" class="hidden">Next</button>
+            <button id="backToList" type="button">List</button>
         </div>
         ',
         '#attached' => [

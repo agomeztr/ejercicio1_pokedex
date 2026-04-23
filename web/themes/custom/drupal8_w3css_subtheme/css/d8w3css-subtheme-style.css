@@ -41,16 +41,16 @@
 
 #photo-pokemon{
     position: absolute;
-    width: 18%;
-    top: 62%;
-    left: 11%;
+    width: 235px;
+    margin-top: -350px;
+    margin-left: 28px;
 }
 
 #name-pokemon, #pokemons{
     position: absolute;
-    font-size: 16px;
-    margin-top: -61px;
-    margin-left: 76px;
+    font-size: 14px;
+    margin-top: -59px;
+    margin-left: 75px;
 }
 
 #details{
