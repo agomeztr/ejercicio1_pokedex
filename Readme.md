@@ -58,8 +58,16 @@ Debemos de sustituir la url, por la url del repositorio de GitHub
 
 > git push -u origin main
 
-## Elaboración del código.
+## Código
 
-Para la pokédex he buscado una plantilla de Internet. Para poder empezar a realizar mi API he utilizado este vídeo:
+### Decisiones
 
-https://www.youtube.com/watch?v=dRIZNayrcLk
+He tenido que realizar un módulo personalizado para poder realizar una página dinámica, en este caso la página de la pokédex. Con php he impreso todas las etiquetas html que quería que se mostraran en mi página, el div que lo contuviera todo, la foto de la pokedex, la imagen del pokemon, los botones, etc. A partir de imprimir con php las etiquetas (con sus id y algunas clases), he añadido mi propia librería de js que he creado.
+
+Para ello, igual que he hehco con el módulo personalizado, he tenido que hacer una librería personalizada, la cual he denominado como "pokedex", en esta está toda la lógica de la pokédex; es decir, listar 10 pokemons, poder cambiar a los 10 siguientes o a los 10 anteriores, si pulsar sobre un nombre de pokemon te muestra todos los detalles, etc. 
+
+Además, en el módulo php he tenido que indicarle que todas las etiquetas que me imprimiera, no me las restrinja.  
+
+### Limitaciones
+
+Al no poder utilizar IA he invertido mucho tiempo en solucionar los errores ya que, o no sabía por qué fallaba o no entendía por qué me daba el error. Además, he de añadir que no ha habido mucha información a encontrar en internet sobre drupal 11 para poder solucionar mis errores y/o dudas, por lo que muchas de las dudas me las ha tenido que resolver mi tutor.
