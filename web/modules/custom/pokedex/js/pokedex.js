@@ -11,9 +11,17 @@ document.addEventListener("DOMContentLoaded", () => {
         //save the data results (result in json api)
         listPokemons = data.results;
         console.log(data.results);
+        //list the pokemons
+        listTenPokemons();
         //show the pokemon
         showPokemon();
     })
+
+    //function to list the first 10 pokemons
+    function listTenPokemons(){
+        const list = listPokemons.slice(0, 10);
+        console.log(list);
+    }
 
     //Get the name from the main page
     let pokemonName = document.getElementById("name-pokemon");

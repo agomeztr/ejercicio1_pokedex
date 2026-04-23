@@ -19,37 +19,41 @@
     left: 0.8%;
 }
 
-#name-pokemon{
+.name-pokemon{
     position: absolute;
     font-size: 100%;
-    left: 14.3%;
+    left: 14.1%;
     bottom: -11.5%;
 }
 
 #details{
     position: absolute;
     left: 35%;
-    bottom: 0%;
+    bottom: 11%;
 }
 
 span{
     display: flex;
     font-size: 75%;
-    height: auto;
 }
 
 span h6{
-    margin-right: 4%;
+    font-weight: bold;
+    margin: 0% 6% 0% 0%;
 }
 
 span p{
-    margin-top: 10.5%;
+    margin: 3% 0% 0% 0%;
 }
 
 span ul{
-    margin-top: 0%;
+    margin: 0%;
 }
 
 #copyright-inner p{
     color: black;
+}
+
+#show-details{
+    background-color: blue;
 }
