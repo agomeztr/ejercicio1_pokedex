@@ -47,8 +47,13 @@ document.addEventListener("DOMContentLoaded", () => {
             console.log(poke.id);
             //add and event to pass the id to view details
             let btn = document.getElementById('btn-' + p.name);
-            btn.addEventListener("click", function(event) {
-                console.log(p.name);
+            btn.addEventListener("click", () => {
+                //find the pokemon of the list that user click
+                let pokemonToShow = list.find(({name}) => name === p.name);
+                //get the id od the pokemon
+                let id = pokemonToShow.url.split("/")[6];
+                console.log(id);
+                showPokemon(id);
             })
         })
         console.log(list);
@@ -61,7 +66,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let photo = document.getElementById("photo-pokemon");
     //get the pokemon details
     //get the id from the main page
-    let id = document.getElementById("id");
+    let pokemonId = document.getElementById("id");
     let types = document.getElementById("types");
     //get the height from the main page
     let height = document.getElementById("height");
@@ -112,32 +117,35 @@ document.addEventListener("DOMContentLoaded", () => {
         console.log(page);
     })
 
-    //call to the pokemon url details
-    fetch("https://pokeapi.co/api/v2/pokemon/" + (index + 1) + "/")
-    .then(response => response.json())
-    .then(data => {
-        //save the details
-        console.log(data);
-        id.textContent = data.id;
-        //go across the data types
-        data.types.forEach(type => {
-            //create a li for each type that data has
-            let list = document.createElement("li");
-            list.textContent = type.type.name[0].toLocaleUpperCase() + type.type.name.slice(1);;
-            types.appendChild(list);
-        });
-        height.textContent = data.height
-        weight.textContent = data.weight;
-    })
-
     //function to show the pokemon in the pokedex
-    function showPokemon(){
-        //get the first pokemon
-        const pokemon = listPokemons[index];
+    function showPokemon(id){
+        //delete the data from ul of types
+        types.innerHTML = '';
+        //get the pokemon
+        const pokemon = listPokemons[id - 1];
         //print the pokemon's name with the first letter in capital
         pokemonName.textContent = pokemon.name[0].toLocaleUpperCase() + pokemon.name.slice(1);
         name.textContent = pokemon.name[0].toLocaleUpperCase() + pokemon.name.slice(1);
         //print the image
-        photo.src = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/" + (index + 1) + ".png";
+        photo.src = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/" + id + ".png";
+        //print the id of the pokemon
+        pokemonId.textContent = id;
+        console.log(id);
+        //call to the pokemon url details
+        fetch("https://pokeapi.co/api/v2/pokemon/" + (id) + "/")
+        .then(response => response.json())
+        .then(data => {
+            //save the details
+            console.log(data);
+            //go across the data types
+            data.types.forEach(type => {
+                //create a li for each type that data has
+                let list = document.createElement("li");
+                list.textContent = type.type.name[0].toLocaleUpperCase() + type.type.name.slice(1);;
+                types.appendChild(list);
+            });
+            height.textContent = data.height
+            weight.textContent = data.weight;
+        })
     }
 })
