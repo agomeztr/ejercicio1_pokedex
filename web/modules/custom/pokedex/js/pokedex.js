@@ -3,6 +3,12 @@ document.addEventListener("DOMContentLoaded", () => {
     let listPokemons = [];
     //create an index to navigate between pokemons
     let index = 0;
+    //create a variable to change the page
+    let page = 1;
+    //create a variable to indicate the number of pokemons to show
+    const quantity = 10;
+    //create a variable to save the total pages
+    let totalPages = 0;
 
     //call to the api
     fetch("https://pokeapi.co/api/v2/pokemon?limit=100000&offset=0")
@@ -11,15 +17,24 @@ document.addEventListener("DOMContentLoaded", () => {
         //save the data results (result in json api)
         listPokemons = data.results;
         console.log(data.results);
+        //get the total of pages
+        totalPages = Math.ceil(listPokemons.length / quantity);
+        console.log(totalPages);
         //list the pokemons
         listTenPokemons();
-        //show the pokemon
-        showPokemon();
     })
+
+    //get the ul from the main page
+    let tenPokemons = document.getElementById('all-pokemons')
 
     //function to list the first 10 pokemons
     function listTenPokemons(){
-        const list = listPokemons.slice(0, 10);
+        //get the first position of the slice
+        let initial = (page - 1) * quantity;
+        //get the last position of the slice
+        let end = initial + quantity;
+        //slice to list only 10 pokemons in page
+        let list = listPokemons.slice(initial, end);
         console.log(list);
     }
 
@@ -28,14 +43,6 @@ document.addEventListener("DOMContentLoaded", () => {
     let name = document.getElementById("name");
     //get the image from main page
     let photo = document.getElementById("photo-pokemon");
-    //get the next button
-    let next = document.getElementById("next");
-
-    /*//function to increase the index
-    next.addEventListener("click", () => {
-        index++;
-    })*/
-
     //get the pokemon details
     //get the id from the main page
     let id = document.getElementById("id");
@@ -44,6 +51,50 @@ document.addEventListener("DOMContentLoaded", () => {
     let height = document.getElementById("height");
     //get the weight from the main page
     let weight = document.getElementById("weight");
+    //get the buttoms
+    //get the next button
+    let next = document.getElementById("next");
+    //get the previous button
+    let previous = document.getElementById('previous');
+    //get the right button
+    let right = document.getElementById('right');
+    //get the left button
+    let left = document.getElementById('left');
+
+    //function to increase the index
+    next.addEventListener("click", () => {
+        index++;
+        //print again the pokemon with the new id
+        showPokemon();
+        console.log("Click");
+    })
+
+    //function to decrease the index
+    previous.addEventListener("click", () => {
+        index--;
+        //print again the pokemon with the new id
+        showPokemon();
+    })
+
+    //function to increse the list of ten pokemons
+    right.addEventListener("click", () => {
+        //to asure the number of page it's not up to maximum
+        if(page < totalPages){
+            page++;
+        } 
+        listTenPokemons();
+        console.log(page);
+    })
+
+    //function to decrease the list of ten pokemons
+    left.addEventListener("click", () => {
+        //to asure the number of page it's not down to minimum
+        if(page > 1){
+            page--;
+        } 
+        listTenPokemons();
+        console.log(page);
+    })
 
     //call to the pokemon url details
     fetch("https://pokeapi.co/api/v2/pokemon/" + (index + 1) + "/")
