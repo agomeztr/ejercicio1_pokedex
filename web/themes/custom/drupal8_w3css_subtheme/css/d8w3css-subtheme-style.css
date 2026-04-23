@@ -12,6 +12,30 @@
     position: relative;
 }
 
+#all-pokemons{
+    display: flex;
+    flex-direction: column;
+    float: left;
+    position: absolute;
+    margin-left: 20px;
+    bottom: 14px;
+}
+
+.button-poke{
+    border: none;
+    background-color: white;
+    font-size: 10px;
+    text-align: start;
+}
+
+.button-poke:hover{
+    background-color: #fb0506;
+    cursor: pointer;
+    width: auto;
+    border-radius: 10px;
+    color: white;
+}
+
 #photo-pokemon{
     position: absolute;
     width: 18%;

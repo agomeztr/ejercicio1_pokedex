@@ -24,17 +24,33 @@ document.addEventListener("DOMContentLoaded", () => {
         listTenPokemons();
     })
 
-    //get the ul from the main page
-    let tenPokemons = document.getElementById('all-pokemons')
+    //get the div from the main page
+    let tenPokemons = document.getElementById('all-pokemons');
 
     //function to list the first 10 pokemons
     function listTenPokemons(){
+        tenPokemons.innerHTML = '';
         //get the first position of the slice
         let initial = (page - 1) * quantity;
         //get the last position of the slice
         let end = initial + quantity;
         //slice to list only 10 pokemons in page
         let list = listPokemons.slice(initial, end);
+        //array to print the ten pokemon
+        list.forEach(p => {
+            //create a button for each pokemon
+            let poke = document.createElement("button");
+            poke.id = 'btn-' + p.name;
+            poke.className = 'button-poke';
+            poke.textContent = p.name[0].toLocaleUpperCase() + p.name.slice(1);;
+            tenPokemons.appendChild(poke);
+            console.log(poke.id);
+            //add and event to pass the id to view details
+            let btn = document.getElementById('btn-' + p.name);
+            btn.addEventListener("click", function(event) {
+                console.log(p.name);
+            })
+        })
         console.log(list);
     }
 
@@ -105,7 +121,7 @@ document.addEventListener("DOMContentLoaded", () => {
         id.textContent = data.id;
         //go across the data types
         data.types.forEach(type => {
-            //create a li for every types that data has
+            //create a li for each type that data has
             let list = document.createElement("li");
             list.textContent = type.type.name[0].toLocaleUpperCase() + type.type.name.slice(1);;
             types.appendChild(list);

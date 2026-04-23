@@ -11,7 +11,7 @@ class PokedexController extends ControllerBase {
         <div id="pokedex">
             <img id = "photo-pokedex" src= "/sites/default/files/2026-04/plantilla_pokedex.png">
             <img id="photo-pokemon">
-            <ul id="all-pokemons"></ul>
+            <div id="all-pokemons"></div>
             <h2 id="pokemons">Pokemons</h2>
             <h2 id="name-pokemon"></h2>
             <section id="details">
