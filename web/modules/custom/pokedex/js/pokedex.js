@@ -24,6 +24,9 @@ document.addEventListener("DOMContentLoaded", () => {
         listTenPokemons();
     })
 
+    //get the section of details
+    let details = document.getElementById("details");
+
     //get the div from the main page
     let tenPokemons = document.getElementById('all-pokemons');
 
@@ -48,6 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
             //add and event to pass the id to view details
             let btn = document.getElementById('btn-' + p.name);
             btn.addEventListener("click", () => {
+                details.className = "show";
                 //find the pokemon of the list that user click
                 let pokemonToShow = list.find(({name}) => name === p.name);
                 //get the id od the pokemon
@@ -81,6 +85,8 @@ document.addEventListener("DOMContentLoaded", () => {
     let right = document.getElementById('right');
     //get the left button
     let left = document.getElementById('left');
+    //get the back to list button
+    let backToList = document.getElementById('backToList');
 
     //function to increase the index
     next.addEventListener("click", () => {
@@ -115,6 +121,11 @@ document.addEventListener("DOMContentLoaded", () => {
         } 
         listTenPokemons();
         console.log(page);
+    })
+
+    backToList.addEventListener("click", () => {
+        details.className = "hidden";
+        photo.className = "hidden";
     })
 
     //function to show the pokemon in the pokedex

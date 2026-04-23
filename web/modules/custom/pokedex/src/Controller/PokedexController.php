@@ -14,7 +14,7 @@ class PokedexController extends ControllerBase {
             <div id="all-pokemons"></div>
             <h2 id="pokemons">Pokemons</h2>
             <h2 id="name-pokemon"></h2>
-            <section id="details">
+            <section id="details" class="hidden">
                 <span>
                     <h6>Nombre: </h6>
                     <p id="name"></p>
@@ -40,6 +40,7 @@ class PokedexController extends ControllerBase {
             <button id="left" type="button">Left</button>
             <button id="previous" type="button">Previous</button>
             <button id="next" type="button">Next</button>
+            <button id="backToList" type="button">Back</button>
         </div>
         ',
         '#attached' => [
